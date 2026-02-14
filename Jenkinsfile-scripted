@@ -1,0 +1,20 @@
+node {
+
+    stage('Clone Repository') {
+        echo 'Cloning Repository...'
+        checkout scm
+    }
+
+    stage('Build') {
+        echo 'Building Project...'
+        sh 'javac App.java'
+    }
+
+    stage('Echo Build Status') {
+        echo "Build Completed Successfully"
+    }
+
+    stage('Archive Artifacts') {
+        archiveArtifacts artifacts: '*.class', fingerprint: true
+    }
+}
