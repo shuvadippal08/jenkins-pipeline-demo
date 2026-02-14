@@ -7,7 +7,7 @@ node {
 
     stage('Build') {
         echo 'Building Project...'
-        sh 'javac App.java'
+        bat 'javac App.java'
     }
 
     stage('Echo Build Status') {
