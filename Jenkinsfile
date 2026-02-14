@@ -18,7 +18,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building Project...'
-                sh 'javac App.java'
+                bat 'javac App.java'
             }
         }
 
